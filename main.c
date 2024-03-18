@@ -1,17 +1,17 @@
 /******************************************************************************
 
-Word Line Seperator
+Word Line Separator
 
 This straightforward program prints one word per line. It employs a while loop 
-to detect the EOF (end-of-file) condition for program termination.Upon the 
+to detect the EOF (end-of-file) condition for program termination. Upon the 
 termination of a word, indicated by escape sequences ('\n', ' ', '\t'), the 
 state variable switches to OFF. The if statement checks for the presence of an 
 escape sequence, which indicates the termination of a word.  The else-if 
-condition triggers when a valid character isreceived and the state variable is 
+condition triggers when a valid character is received and the state variable is 
 in the OFF condition, signaling the start of a new word. It sets the state to ON
-and inserts the '\n' escape sequence using printf.  The second if statement 
+and inserts the '\n' escape sequence using print. The second if statement 
 verifies if the state is ON, indicating the detection of a new word. While this 
-application is basic and does not encompass all scenarios,it adequately fulfills 
+application is basic and does not encompass all scenarios, it adequately fulfills 
 the exercise requirements. Its main objective is to demonstrate the usage of if,
 else if, and else statements, along with introducing state tracking.
 
