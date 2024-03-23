@@ -37,16 +37,16 @@ disregarding trailing spaces and tabs."
 char currentline[300];
 char newline[MAXLINE];
 
-void get_line(char s[]);
+void get_line(char s[]); 
 int string_size (char s[]);
 void bsremover(char in[]);
 
 int main()
 {
-    get_line(currentline);
-    printf("\nBefore BS Remover function: %s", currentline);
-    printf("\nSize:%d", string_size(currentline));
-    bsremover(currentline);
+    get_line(currentline); //Gets user input from the terminal
+    printf("\nBefore BS Remover function: %s", currentline); //Shows unedited text
+    printf("\nSize:%d", string_size(currentline)); //Size of unedited text
+    bsremover(currentline); //Removes trailing edge space and tabs
     printf("\nAfter Tab and Space Remover: %s", currentline);
     printf("\nSize: %d", string_size(currentline));
     
@@ -62,20 +62,20 @@ void get_line(char s[]){
 
 int string_size(char s[]){
     int size;
-    for(size = 0; s[size] != '\0'; ++size)
+    for(size = 0; s[size] != '\0'; ++size) //Count string size until null termination is reached
         ;
-    return size;
+    return size; //Returns the size as an integer
     
 }
 
-void bsremover(char in[]){
+void bsremover(char in[]){ //Modifies the calling array
     int length = 0;
-    int state = 1;
+    int state = 1; 
     
     length = string_size(in);
     
-    for(int i = length; i >= 0 && state == 1; --i){
-        if((in[i] == ' ') || (in[i] =='\t') || (in[i] == '\0')){
+    for(int i = length; i >= 0 && state == 1; --i){ //The state condition ensures only trailing tabs and space are removed
+        if((in[i] == ' ') || (in[i] =='\t') || (in[i] == '\0')){ //Decrement to length for each defined escape sequence encountered
             --length;
         }
         else if(state){
